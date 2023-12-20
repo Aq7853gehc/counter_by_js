@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      body {
+        background-color: #352f44;
+        display: flex;
+        justify-content: center;
+      }
+      div {
+        padding: 20px;
+        text-align: center;
+        width: 50%;
+        height: 300px;
+        font-size: 2rem;
+      }
+      h1 {
+        background: linear-gradient(
+          to bottom,
+          #b6fffa,
+          #98e4ff,
+          #80b3ff,
+          #687eff
+        );
+        background-clip: text;
+        color: transparent;
+        font-size: 5rem;
+        margin-bottom: 10%;
+      }
+      p {
+        color: #faf0e6;
+        font-size: 2.5rem;
+      }
+
+      button {
+        margin-top: 10%;
+        background-color: #b9b4c7;
+        border: 2px solid #b9b4c7;
+        font-size: 2rem;
+        border-radius: 50px;
+        padding: 9px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div">
+      <h1>Counter</h1>
+      <p id="display"></p>
+      <button onclick="increase()">Increase</button>
+      <button onclick="reset()">Reset</button>
+      <button onclick="decrease()">Decrease</button>
+    </div>
+  </body>
+
+  <script>
+    let p = document.querySelector("#display");
+    let count = 0;
+    p.textContent = count;
+    let increase = () => {
+      count++;
+      p.textContent = count;
+    };
+    let reset = () => {
+      count = 0;
+      p.textContent = count;
+    };
+    let decrease = () => {
+      count--;
+      if (count < 0) {
+        count = 0;
+      }
+      p.textContent = count;
+    };
+  </script>
+</html>
